@@ -95,7 +95,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
 
      it('seleciona um arquivo da pasta fixtures', function(){
         cy.get('#file-upload').should('not.have.value')
-        .selectFile('C:/Users/aline.silva/Documents/Cursos/Projetos/cypress-basico-v2/src/privacy.html')
+        .selectFile('./src/privacy.html')
         .should(function($input){
             expect($input[0].files[0].name).to.equal('privacy.html')
         })
@@ -103,7 +103,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
 
      it('seleciona um arquivo simulando um drag-and-dro', function(){
         cy.get('#file-upload').should('not.have.value')
-        .selectFile('C:/Users/aline.silva/Documents/Cursos/Projetos/cypress-basico-v2/src/privacy.html',{action:'drag-drop'})
+        .selectFile('./src/privacy.html',{action:'drag-drop'})
         .should(function($input){
             expect($input[0].files[0].name).to.equal('privacy.html')
         })
